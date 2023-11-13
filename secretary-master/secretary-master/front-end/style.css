@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root{
+    --global-background-color: #000000;
+    --link-background-color: #071f4e;
+    --global-color-hover: #d9850f;
+    --global-color-card: #0ac5a0;
+    --global-color-text: #ffffff;
+    --global-footer-bg: #000000;
+    --gray-color: #ccc;
+}
+
+html{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--global-background-color);
+    color: var(--global-color-text);
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--global-color-text);
+    transition: all 0.7s;
+}
+
+a:hover{
+    color: var(--global-color-hover);
+}
+
+input{
+    border: none;
+    margin: 0.8rem auto;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    width: 100%;
+    transition: all 0.7s;
+}
+
+input:focus{
+    border:solid 1px var(--link-background-color);
+}
+
+header{
+    box-shadow: 0 8px 15px -3px var(--gray-color);
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 1rem;
+} 
+
+header nav ul{
+    list-style-type: none;
+    display: inline-flex;
+}
+
+header nav ul li{
+    margin: 0 1rem;
+} 
+
+@media screen and (max-width: 640px){
+    header nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .brand{
+        margin-bottom: 1rem;
+    }
+}
+
+/* footer */
+
+footer{ 
+    padding: 1rem;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: var(--global-footer-bg);
+    box-shadow: 0 -8px 15px -3px var(--gray-color);
+}
+
+/* modals */
+.modals-wrapper{
+    position: fixed;;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-color-card);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background-color: var(--global-background-color);
+    min-width: 10rem;
+    min-height: 10rem;
+    width: 50%;
+    height: 50%;
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 8px 15px -3px var(--global-background-color);
+}
+  
+#close-modal{
+    background-color: var(--global-color-hover);
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+#login-modal, #register-modal{
+    text-align: center ;
+    background-color: var(--global-background-color);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#password-modal, #add-password-modal{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copy{
+    cursor: pointer;
+}
+
+.container{
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+    margin-bottom: 8rem;
+}
+
+.card{
+    background-color: var(--global-color-card);
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions{
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    margin: auto;
+    color: black;
+}
+
+.actions a{
+    display: none;
+    background-color: var(--link-background-color);
+    flex-direction: column;
+    padding: 0.1rem;
+    align-items: center;
+}
+
+.actions:hover .action-item{
+    display: flex;
+}
+
+.name{
+    color: black;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    margin: auto;
+}
+
+@media screen and (max-width: 680px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .modal{
+        min-height: 20rem;
+    }
+
+    .modals-wrapper{
+        max-height: 100%;
+    }
+}

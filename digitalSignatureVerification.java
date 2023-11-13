@@ -114,14 +114,14 @@ public class digitalSignatureVerification {
         System.out.println("d-->"+keys.d);
         System.out.println("n-->"+keys.n);
 
-        long msg = 1297;
+        long msg = 2000;
         long cipher = encryption(keys.d,keys.n,msg);
         System.out.println("Digital Signature is -->"+cipher);
         long verifiedSign = decryption(keys.e,keys.n,cipher);
         System.out.println("Decrypted signature-->"+verifiedSign);
 
         if(msg == verifiedSign){
-            System.out.println("The user is verified as ds is correct");
+            System.out.println("The user is verified as Digital Signature is correct");
         }
         else {
             System.out.println("User is not verified");
